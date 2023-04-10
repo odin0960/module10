@@ -23,35 +23,36 @@ public class WordFrequency {
         return null;
     }
 
-    public void countWords(String[] words) {
-        // рахує кількість кожного слова у тексті (масиві),
-        // формує мапу - "слово - кількость"
-        // та виводить у консоль
-        ArrayList<String> wordUnique = new ArrayList<>();
+    public void countWords(String[] words) { // рахує кількість кожного слова у тексті (масиві),
+        // формує мапу - "слово - кількость" та виводить у консоль
+        ArrayList<String> key = new ArrayList<>();
         for (String word : words) {
-            if (!wordUnique.contains(word))
-                wordUnique.add(word);
+            if (!key.contains(word))
+                key.add(word);
         }
 
-        ArrayList<Integer> countWords = new ArrayList<>();
-        for (int i = 0; i < wordUnique.size(); i++) {
+        ArrayList<Integer> value = new ArrayList<>();
+        for (int i = 0; i < key.size(); i++) {
             int count = 0;
             for (String word : words) {
-                if (wordUnique.get(i).equals(word))
+                if (key.get(i).equals(word))
                     count++;
             }
-            countWords.add(count);
+            value.add(count);
         }
 
         Map<String, Integer> map = new HashMap<>();
-        for (int i = 0; i < wordUnique.size(); i++) {
-            map.put(wordUnique.get(i), countWords.get(i));
+        for (int i = 0; i < key.size(); i++) {
+            map.put(key.get(i), value.get(i));
         }
 
         List<Map.Entry<String, Integer>> list = new ArrayList<>(map.entrySet());
         Collections.sort(list, Collections.reverseOrder(Map.Entry.comparingByValue()));
-        for (Map.Entry<String, Integer> entry: list) {
+        for (Map.Entry<String, Integer> entry : list) {
             System.out.println(entry.getKey() + " " + entry.getValue());
+
+//      map.entrySet().stream().sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
+//                .forEach(System.out::println);
         }
     }
 }
