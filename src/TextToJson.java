@@ -29,7 +29,7 @@ public class TextToJson {
 
         String json = gson.toJson(users);
 
-        File fileJson = new File("file.json");
+        File fileJson = new File("./files/file.json");
         try(FileWriter writer = new FileWriter(fileJson)){
             writer.write(json);
             writer.flush();
@@ -68,8 +68,8 @@ public class TextToJson {
 
     class TextToJsonTest {
         public static void main(String[] args) {
-            TextToJson test = new  TextToJson();
-            test.readTextToObject("file.txt");
+            TextToJson test = new TextToJson();
+            test.readTextToObject("./files/file.txt");
             test.writeObjectToJson();
 
         }

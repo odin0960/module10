@@ -23,7 +23,8 @@ public class WordFrequency {
         return null;
     }
 
-    public void countWords(String[] words) { // рахує кількість кожного слова у тексті (масиві),
+    public void countWords(String[] words) {
+        // рахує кількість кожного слова у тексті (масиві),
         // формує мапу - "слово - кількость" та виводить у консоль
         ArrayList<String> key = new ArrayList<>();
         for (String word : words) {
@@ -47,7 +48,7 @@ public class WordFrequency {
         }
 
         List<Map.Entry<String, Integer>> list = new ArrayList<>(map.entrySet());
-        Collections.sort(list, Collections.reverseOrder(Map.Entry.comparingByValue()));
+        list.sort(Collections.reverseOrder(Map.Entry.comparingByValue()));
         for (Map.Entry<String, Integer> entry : list) {
             System.out.println(entry.getKey() + " " + entry.getValue());
 
@@ -61,6 +62,6 @@ class WordFrequencyTest {
     public static void main(String[] args) {
         WordFrequency fileWords = new WordFrequency();
 
-        fileWords.countWords(fileWords.readFile("words.txt"));
+        fileWords.countWords(fileWords.readFile("./files/words.txt"));
     }
 }

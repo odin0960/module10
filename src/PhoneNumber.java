@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class PhoneNumber {
 
     public static void readPhoneNumber() {
-        try (FileInputStream file = new FileInputStream("phone.txt")) {
+        try (FileInputStream file = new FileInputStream("./files/phone.txt")) {
             byte[] buffer = new byte[file.available()];
             file.read(buffer);
 

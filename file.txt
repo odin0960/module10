@@ -1,8 +1,0 @@
-name age
-alice 25
-sam 32
-bill 24
-greg 28
-samanta 35
-jack 41
-mary 26
