@@ -10,7 +10,7 @@ public class PhoneNumber {
             byte[] buffer = new byte[file.available()];
             file.read(buffer);
 
-            Pattern pattern = Pattern.compile("(\\(\\b\\d{3}\\)\\s\\d{3}-\\d{4}\\b)|(\\b\\d{3}-\\d{3}-\\d{4}\\b)");
+            Pattern pattern = Pattern.compile("(^\\(\\d{3}\\)\\s\\d{3}-\\d{4}\\r)|(^\\d{3}-\\d{3}-\\d{4}\\r)", Pattern.MULTILINE);
             Matcher matcher = pattern.matcher(new String(buffer));
 
            while (matcher.find()) {
