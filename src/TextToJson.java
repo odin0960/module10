@@ -37,40 +37,6 @@ public class TextToJson {
             System.out.println(e.getMessage());
         }
     }
-    }
+}
 
 
-    class User implements Serializable {
-        private String name;
-        private int age;
-
-        User(String name, int age) {
-            this.name = name;
-            this.age = age;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public int getAge() {
-            return age;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public void setAge(int age) {
-            this.age = age;
-        }
-    }
-
-    class TextToJsonTest {
-        public static void main(String[] args) {
-            TextToJson test = new TextToJson();
-            test.readTextToObject("./files/file.txt");
-            test.writeObjectToJson();
-
-        }
-    }
