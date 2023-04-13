@@ -4,7 +4,7 @@ import java.util.*;
 
 public class WordFrequency {
 
-    public String[] readFile(String fileName) {         //повертає текст у вигляді масиву слів
+    public String[] readFile(String fileName) {         // метод повертає текст у вигляді масиву слів
         try (FileInputStream file = new FileInputStream(fileName)) {
             StringBuilder str = new StringBuilder();
             Scanner scanner = new Scanner(file);
@@ -21,7 +21,7 @@ public class WordFrequency {
         return null;
     }
 
-    public void countWords(String[] words) {       // рахує кількість кожного слова у тексті (масиві), формує мапу - "слово - кількість" та виводить у консоль, сортуючи по кількості від більшого до меншого
+    public void countWords(String[] words) {       // метод рахує кількість кожного слова у тексті (масиві), формує мапу - "слово - кількість" та виводить у консоль, сортуючи по кількості від більшого до меншого
         ArrayList<String> key = new ArrayList<>();   // колекція унікальних слів
         for (String word : words) {
             if (!key.contains(word))
