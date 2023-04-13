@@ -21,16 +21,14 @@ public class WordFrequency {
         return null;
     }
 
-    public void countWords(String[] words) {
-        // рахує кількість кожного слова у тексті (масиві),
-        // формує мапу - "слово - кількість" та виводить у консоль
+    public void countWords(String[] words) {       // рахує кількість кожного слова у тексті (масиві), формує мапу - "слово - кількість" та виводить у консоль, сортуючи по кількості від більшого до меншого
         ArrayList<String> key = new ArrayList<>();   // колекція унікальних слів
         for (String word : words) {
             if (!key.contains(word))
                 key.add(word);
         }
 
-        ArrayList<Integer> value = new ArrayList<>();  // колекція кількостей слів у тексті (індекси співпадають з колекцією слів)
+        ArrayList<Integer> value = new ArrayList<>();  // колекція кількостей слів у тексті (розмір та індекси співпадають з колекцією слів)
         for (int i = 0; i < key.size(); i++) {
             int count = 0;
             for (String word : words) {
