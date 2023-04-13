@@ -4,8 +4,6 @@ import java.util.*;
 
 public class WordFrequency {
 
-    private String fileName;
-
     public String[] readFile(String fileName) {         //повертає текст у вигляді масиву слів
         try (FileInputStream file = new FileInputStream(fileName)) {
             StringBuilder str = new StringBuilder();
@@ -60,5 +58,5 @@ public class WordFrequency {
 //        map.entrySet().stream()
 //                .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
 //                .forEach(value -> System.out.println(value.getKey() + " " + value.getValue()));        }
+    }
 }
-
